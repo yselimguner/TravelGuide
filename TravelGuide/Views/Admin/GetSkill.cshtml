@@ -1,0 +1,22 @@
+﻿@model TravelGuide.Models.Class.Skills
+@{
+    ViewBag.Title = "GetSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Skill Update Page</h3>
+<br />
+@using (Html.BeginForm("UpdateSkill", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Percentage)
+    @Html.TextBoxFor(x => x.Percentage, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update Blog</button>
+}
+

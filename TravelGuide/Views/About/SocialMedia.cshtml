@@ -1,0 +1,10 @@
+﻿@using TravelGuide.Models.Class
+@model List<SocialMedia>
+
+
+<ul class="agileinfo_social_icons">
+    @foreach (var item in Model)
+    {
+    <li><a href="@item.Link" class="w3_agileits_instagram"><i class="fa fa-@item.Brand" aria-hidden="true"></i></a></li>
+    }
+</ul>

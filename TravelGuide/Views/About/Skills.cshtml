@@ -1,0 +1,9 @@
+﻿@using TravelGuide.Models.Class
+@model List<Skills>
+
+<ul>
+    @foreach (var item in Model)
+    {
+    <li><label>@item.Name</label> <span></span> @item.Percentage%</li>
+    }
+</ul>

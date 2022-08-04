@@ -1,0 +1,37 @@
+﻿@using TravelGuide.Models.Class
+@model List<AboutUs>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>About Us Page</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>PhotoUrl</th>
+        <th>Description</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Name</td>
+            <td>@x.PhotoUrl</td>
+            <td>@x.Description</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Admin/GetAbout/@x.Id">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Edit
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@using TravelGuide.Models.Class
+@model List<Blog> 
+
+
+<div class="padding1">
+    <h4>Our Best Places</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            <div class="bot-img">
+                <img src="@x.BlogImage" style="width:120px;" height="65px;" alt="" />
+            </div>
+                 <div class="bot-desc">
+                    <p>@x.Description.Substring(0,70) </p>
+            </div>
+            <div class="clear"></div>
+        }
+
+    </div>
+    @Html.Action("partial5","Default")
+</div>

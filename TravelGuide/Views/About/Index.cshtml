@@ -1,0 +1,111 @@
+﻿
+@using TravelGuide.Models.Class
+@model List<AboutUs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Delightful Profile template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme -->
+    <link href="~/webCV/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="~/webCV/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- font-awesome-icons -->
+    <link href="~/webCV/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="~/webCV/css/lightcase.css" rel="stylesheet" type="text/css" />
+    <link rel="~/webCV/stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+    <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="w3_agile_main_grids">
+            @foreach (var item in Model)
+            {
+
+            
+            <div class="w3layouts_main_grid_left">
+                <div class="w3_main_grid_left_grid">
+                    <h2> @item.Name </h2>
+                    <div class="w3l_figure">
+                        <img src="@item.PhotoUrl" alt=" " />
+                    </div>
+                    <ul class="resp-tabs-list hor_1">
+                        
+                        <li><a href="https://github.com/yselimguner"><i class="fa fa-briefcase" aria-hidden="true"></i> MY WORKS </a></li>
+                        <BR />
+                        <li><a href="/Contact/Index"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT ME </a></li>
+                    </ul>
+                    <br />
+                    @Html.Action("SocialMedia")
+                </div>
+            </div>
+            <div class="w3layouts_main_grid_right">
+                <div class="w3ls_main_grid_right_grid">
+                    <div id="parentHorizontalTab">
+                        <div class="resp-tabs-container hor_1">
+                            <div class="agileits_main_grid_right_grid">
+                                <p class="agileinfo_para">
+                                    <i>
+                                        @item.Description
+                                    </i>
+                                </p>
+                                
+                                <div class="agileits_skills">
+                                    <h3>My Skills</h3>
+                                    <div class="w3_agileits_skills_grid">
+                                        @Html.Action("Skills")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"> </div>
+            }
+        </div>
+        <div class="agileits_copyright">
+        </div>
+    </div>
+    <script src="~/webCV/js/easyResponsiveTabs.js"></script>
+    <script type="~/webCV/text/javascript">
+		$(document).ready(function() {
+			//Horizontal Tab
+			$('#parentHorizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				tabidentify: 'hor_1', // The tab groups identifier
+				activate: function(event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#nested-tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+		});
+    </script>
+    <!-- light-case -->
+    <script src="~/webCV/js/lightcase.js"></script>
+    <script src="~/webCV/js/jquery.events.touch.js"></script>
+    <script>
+			$('.showcase').lightcase();
+    </script>
+    <!-- //light-case -->
+
+</body>
+</html>

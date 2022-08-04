@@ -1,0 +1,35 @@
+﻿@using TravelGuide.Models.Class
+@model List<Comments>
+@{
+    ViewBag.Title = "ListofComments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>List of Comments</h3>
+
+<table class="table table-bordered" >
+    <tr>
+        <th>Id</th>
+        <th>User</th>
+        <th>Mail</th>
+        <th>Comment</th>
+        <th>Blog</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <th>@x.Id</th>
+    <th>@x.UserName</th>
+    <th>@x.Mail</th>
+    <th>@x.Comment</th>
+    <th>@x.Blog.Title</th>
+    <th><a href="/Admin/GetComments/@x.Id" class="btn btn-warning">Update</a></th>
+    <th><a href="/Admin/DeleteComment/@x.Id" class="btn btn-danger">Delete</a></th>
+    
+</tr>
+    }
+    
+</table>
+
